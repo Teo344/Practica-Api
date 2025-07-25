@@ -23,12 +23,12 @@ public class Category {
     @Column(length = 255)
     private String description; 
 
-    @Column(name = "fecha_creacion", nullable = false)
-    private LocalDateTime dateCreated;
+    @Column(name = "createdAt" , nullable = false)
+    private LocalDateTime createdAt;
 
     @PrePersist
     public void asignarFechaCreacion() {
-        this.dateCreated = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now();
     }
 
     public Category() {}
@@ -65,11 +65,11 @@ public class Category {
     }
 
     public LocalDateTime getDateCreated() {
-        return dateCreated;
+        return createdAt;
     }
 
     public void setDateCreated(LocalDateTime dateCreated) {
-        this.dateCreated = dateCreated;
+        this.createdAt = dateCreated;
     }
     
 
